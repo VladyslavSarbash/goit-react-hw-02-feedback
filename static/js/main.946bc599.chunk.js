@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-config-hw"]=this["webpackJsonpreact-config-hw"]||[]).push([[0],{11:function(t,n,c){"use strict";c.r(n);var e=c(1),r=c.n(e),i=c(3),o=c.n(i),s=(c(8),c(9),c(0));var a=function(){return Object(s.jsx)("div",{})};o.a.render(Object(s.jsx)(r.a.StrictMode,{children:Object(s.jsx)(a,{})}),document.getElementById("root"))},8:function(t,n,c){},9:function(t,n,c){}},[[11,1,2]]]);
+//# sourceMappingURL=main.946bc599.chunk.js.map
