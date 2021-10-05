@@ -1,18 +1,23 @@
 import s from './feedbackOption.module.css';
+import shortid from 'shortid';
 
-export default function FeedbackOption({ state, onLeaveFeedback }) {
-  const { good, neutral, bad } = onLeaveFeedback;
+export default function FeedbackOption({ option, onLeaveFeedback }) {
+  // const { good, neutral, bad } = onLeaveFeedback;
   return (
     <div>
-      <button className={s.button} type="button" onClick={good}>
-        Good
-      </button>
-      <button className={s.button} type="button" onClick={neutral}>
-        Neutral
-      </button>
-      <button className={s.button} type="button" onClick={bad}>
-        Bad
-      </button>
+      {option.map(i => {
+        return (
+          <button
+            key={shortid.generate()}
+            className={s.button}
+            name={i}
+            type="button"
+            onClick={onLeaveFeedback}
+          >
+            {i}
+          </button>
+        );
+      })}
     </div>
   );
 }

@@ -12,21 +12,9 @@ class Feedback extends Component {
     bad: 0,
   };
 
-  goodFeedback = () => {
+  choiceFeedback = ({ target }) => {
     this.setState(state => ({
-      good: state.good + 1,
-    }));
-  };
-
-  neutralFeedback = () => {
-    this.setState(state => ({
-      neutral: state.neutral + 1,
-    }));
-  };
-
-  badFeedback = () => {
-    this.setState(state => ({
-      bad: state.bad + 1,
+      [target.name]: state[target.name] + 1,
     }));
   };
 
@@ -48,15 +36,11 @@ class Feedback extends Component {
       <section className={s.section}>
         <h1>Please leave feedback</h1>
         <FeedbackOption
-          option={this.state}
-          onLeaveFeedback={{
-            good: this.goodFeedback,
-            neutral: this.neutralFeedback,
-            bad: this.badFeedback,
-          }}
+          option={['good', 'neutral', 'bad']}
+          onLeaveFeedback={this.choiceFeedback}
         />
         {this.totalFeedback() === 0 ? (
-          <Notification message="No feedback given"></Notification>
+          <Notification message="No feedback given" />
         ) : (
           <Statistics
             good={good}
@@ -84,8 +68,8 @@ Notification.propTypes = {
 };
 
 FeedbackOption.propTypes = {
-  option: PropTypes.object,
-  onLeaveFeedback: PropTypes.objectOf(PropTypes.func),
+  option: PropTypes.array,
+  onLeaveFeedback: PropTypes.func,
 };
 
 export default Feedback;
