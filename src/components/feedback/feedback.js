@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import s from './feedback.module.css';
 import Statistics from './Statistics/statistics';
 import FeedbackOption from './FeedbackOptions/feedbackOptions';
-import Notification from './notification/notification';
+import Notification from './Notification/notification';
 
 class Feedback extends Component {
   state = {
