@@ -1,5 +1,5 @@
-import s from './feedbackOption.module.css';
 import shortid from 'shortid';
+import s from './feedbackOption.module.css';
 
 export default function FeedbackOption({ option, onLeaveFeedback }) {
   // const { good, neutral, bad } = onLeaveFeedback;

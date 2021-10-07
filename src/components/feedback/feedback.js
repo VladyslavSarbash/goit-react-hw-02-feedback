@@ -1,8 +1,8 @@
-import s from './feedback.module.css';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Statistics from './statistics/statistics';
-import FeedbackOption from './feedbackOptions/feedbackOptions';
+import s from './feedback.module.css';
+import Statistics from './Statistics/statistics';
+import FeedbackOption from './FeedbackOptions/feedbackOptions';
 import Notification from './notification/notification';
 
 class Feedback extends Component {
@@ -13,8 +13,8 @@ class Feedback extends Component {
   };
 
   choiceFeedback = ({ target }) => {
-    this.setState(state => ({
-      [target.name]: state[target.name] + 1,
+    this.setState(prevState => ({
+      [target.name]: prevState[target.name] + 1,
     }));
   };
 
